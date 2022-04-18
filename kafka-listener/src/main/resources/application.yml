@@ -1,0 +1,12 @@
+spring:
+  kafka:
+    producer:
+      topic: tacocloud.orders.topic
+      bootstrap-servers: localhost:29888
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: sample.serializer.OrderSerializer
+    consumer:
+      topic: tacocloud.orders.topic
+      bootstrap-servers: localhost:29888
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: sample.serializer.OrderDeserializer

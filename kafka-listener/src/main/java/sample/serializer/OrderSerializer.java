@@ -1,8 +1,9 @@
 package sample.serializer;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import sample.model.Order;
+
 import org.apache.kafka.common.serialization.Serializer;
+import sample.model.Order;
 
 import java.nio.charset.StandardCharsets;
 

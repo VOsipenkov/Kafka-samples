@@ -17,7 +17,6 @@
     <description>Demo project for Spring Boot</description>
 
     <modules>
-        <module>dto</module>
         <module>kafka-listener</module>
         <module>kafka-config</module>
         <module>multi-topic</module>

@@ -1,6 +1,7 @@
 package sample;
 
 import lombok.RequiredArgsConstructor;
+import org.springframework.context.ApplicationContext;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -12,6 +13,8 @@ import java.time.LocalDateTime;
 @RequiredArgsConstructor
 public class OrderController {
     private final KafkaTemplate kafkaTemplate;
+    private final String orderTopic;
+    private final ApplicationContext applicationContext;
 
     @GetMapping(value = "/kafka/order/send")
     public void get() {

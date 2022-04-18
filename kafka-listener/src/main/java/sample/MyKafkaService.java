@@ -18,7 +18,7 @@ public class MyKafkaService {
         log.info("Order {}", order);
     }
 
-    @KafkaListener(topics = "tacocloud.orders.topic", groupId = "second")
+    @KafkaListener(topics = "#{orderTopic}", groupId = "second")
     public void kafkaListener2(Order order) {
         int i = 2;
         log.info("message-{}", i);

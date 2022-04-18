@@ -1,0 +1,2 @@
+If you need config kafkaTemplate \ listener with your own beans, for template, you need create config, factory, template for listener, you need create config,
+factory, listener(with calling service) and ListenerContainer

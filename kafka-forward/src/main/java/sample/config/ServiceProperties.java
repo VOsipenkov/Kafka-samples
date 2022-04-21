@@ -9,7 +9,7 @@ public class ServiceProperties {
     @Value("${spring.kafka.consumer.topic}")
     private String orderTopicName;
 
-    @Value("${spring.kafka.consumer.reserve}")
+    @Value("${spring.kafka.consumer.topic-reserve}")
     private String reserveOrderTopicName;
 
     @Bean

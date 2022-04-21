@@ -2,7 +2,7 @@ spring:
   kafka:
     consumer:
       topic: tacocloud.orders.topic
-      reserve: tacocloud.orders-reserve.topic
+      topicReserve: tacocloud.orders-reserve.topic
       bootstrap-servers: localhost:29888
       key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
       value-deserializer: sample.serializer.OrderDeserializer

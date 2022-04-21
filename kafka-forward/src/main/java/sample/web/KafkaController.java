@@ -1,7 +1,8 @@
-package sample;
+package sample.web;
 
 import lombok.RequiredArgsConstructor;
-import lombok.SneakyThrows;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -11,14 +12,14 @@ import java.time.LocalDateTime;
 
 @RestController
 @RequiredArgsConstructor
-public class OrderController {
+public class KafkaController {
     private final KafkaTemplate kafkaTemplate;
+    private final String orderTopicName;
 
-    @SneakyThrows
     @GetMapping(value = "/kafka/order/send")
-    public void get() {
-        var order = createOrder();
-        kafkaTemplate.send("tacocloud.orders.topic", "second", order);
+    public ResponseEntity<String> sendOrderToReserve() {
+        kafkaTemplate.send(orderTopicName, "first", createOrder());
+        return new ResponseEntity<>("message sent", HttpStatus.OK);
     }
 
     private Order createOrder() {

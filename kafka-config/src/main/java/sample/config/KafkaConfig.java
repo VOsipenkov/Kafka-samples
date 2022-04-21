@@ -66,6 +66,8 @@ public class KafkaConfig {
         var containerProperties = new ContainerProperties(new String[]{(String) consumerProperties.get("topic")});
         containerProperties.setMessageListener(messageListener());
         containerProperties.setGroupId("first");
-        return new ConcurrentMessageListenerContainer(consumerFactory, containerProperties);
+        var container =  new ConcurrentMessageListenerContainer(consumerFactory, containerProperties);
+        container.setConcurrency(3);
+        return container;
     }
 }

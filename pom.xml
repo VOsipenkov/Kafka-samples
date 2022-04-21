@@ -20,6 +20,7 @@
         <module>kafka-listener</module>
         <module>kafka-config</module>
         <module>multi-topic</module>
+        <module>kafka-forward</module>
     </modules>
 
     <properties>
